@@ -1,6 +1,7 @@
 package com.codecraft.cdlist.dto;
 
 import com.codecraft.cdlist.entities.Game;
+import com.codecraft.cdlist.projections.GameMinProjection;
 
 public class GameMinDTO {
     private Long id;
@@ -18,6 +19,14 @@ public class GameMinDTO {
         year = game.getYear();
         imgUrl = game.getImgUrl();
         shortDescription = game.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection gameMinProjection) {
+        id = gameMinProjection.getId();
+        title = gameMinProjection.getTitle();
+        year = gameMinProjection.getYear();
+        imgUrl = gameMinProjection.getImgUrl();
+        shortDescription = gameMinProjection.getShortDescription();
     }
 
     public Long getId() {
